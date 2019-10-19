@@ -16,9 +16,7 @@ export class Tab1Page
   ) { }
 
   single_notification() {
-    this.event.publish('navigate', '/tabs/tab2');
-
-    this.event.publish('notification', 'This is a test notification');
+    this.event.publish('notification', 'This is a test notification', '/tabs/tab2');
   }
 
 }
