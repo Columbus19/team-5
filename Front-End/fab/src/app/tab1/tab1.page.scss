@@ -1,4 +1,29 @@
-.welcome-card img {
-  max-height: 35vh;
-  overflow: hidden;
+#img{
+  float: left;
+}
+#title{
+  text-align: center;
+}
+
+#bar-top-pad {
+  width: 60%;
+  height: 8px;
+}
+
+#bar-title{
+  margin-left: 10%;
+  margin-right: 10%;
+  text-align: center;
+}
+
+#bar {
+    margin-left: 20%;
+    margin-right: 20%;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+canvas{
+  width: 125%;
+  height: 300%;
 }
