@@ -16,7 +16,7 @@ export class IncomePage implements OnInit {
   constructor(public router: Router) { }
 
   home_page(){
-    this.router.navigateByUrl('/income');
+    this.router.navigateByUrl('/tabs');
   }
   ngOnInit() {
     this.barGraph = new Chart(this.barCanvas.nativeElement, {
