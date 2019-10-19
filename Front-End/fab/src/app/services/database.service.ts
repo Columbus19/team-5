@@ -46,48 +46,8 @@ export class DatabaseService {
         .catch(e => console.error(e));
     });
   }
-
   loadDevelopers() {
     return this.database.executeSql('SELECT * FROM MAIN_FAB4 WHERE ClientID = 1')
-  }
-
-  getClient(id): Promise<Dev> {
-    return this.database.executeSql('SELECT ClientName FROM MAIN_FAB4 WHERE ClientId = ?', [id]).then(data => {
-      let skills = [];
-      if (data.rows.item(0).skills != '') {
-        skills = JSON.parse(data.rows.item(0).skills);
-      }
- 
-      return {
-        id: data.rows.item(0).id,
-        name: data.rows.item(0).name, 
-        skills: skills
-      }
-    });
-  }
- 
-  updateDeveloper(dev: Dev) {
-    let data = [dev.name, JSON.stringify(dev.skills), dev.img];
-    return this.database.executeSql(`UPDATE developer SET name = ?, skills = ?, img = ? WHERE id = ${dev.id}`, data).then(data => {
-      this.loadDevelopers();
-    })
-  }
- 
-  loadProducts() {
-    let query = 'SELECT product.name, product.id, developer.name AS creator FROM product JOIN developer ON developer.id = product.creatorId';
-    return this.database.executeSql(query, []).then(data => {
-      let products = [];
-      if (data.rows.length > 0) {
-        for (var i = 0; i < data.rows.length; i++) {
-          products.push({ 
-            name: data.rows.item(i).name,
-            id: data.rows.item(i).id,
-            creator: data.rows.item(i).creator,
-           });
-        }
-      }
-      this.products.next(products);
-    });
   }
   
   getDatabaseState() {
