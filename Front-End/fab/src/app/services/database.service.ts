@@ -7,9 +7,7 @@ import { BehaviorSubject, Observable } from 'rxjs';
  
 export interface Dev {
   id: number,
-  name: string,
-  skills: any[],
-  img: string
+  name: string
 }
  
 @Injectable({
@@ -25,7 +23,7 @@ export class DatabaseService {
   constructor(private plt: Platform, private sqlitePorter: SQLitePorter, private sqlite: SQLite, private http: HttpClient) {
     this.plt.ready().then(() => {
       this.sqlite.create({
-        name: 'developers.db',
+        name: 'fab4.db',
         location: 'default'
       })
       .then((db: SQLiteObject) => {
@@ -51,45 +49,26 @@ export class DatabaseService {
     return this.database.executeSql('SELECT * FROM MAIN_FAB4 WHERE ClientID = 1')
   }
 
-  getClient(id): Promise<Dev> {
-    return this.database.executeSql('SELECT ClientName FROM MAIN_FAB4 WHERE ClientId = ?', [id]).then(data => {
-      let skills = [];
-      if (data.rows.item(0).skills != '') {
-        skills = JSON.parse(data.rows.item(0).skills);
-      }
- 
-      return {
-        id: data.rows.item(0).id,
-        name: data.rows.item(0).name, 
-        skills: skills
-      }
-    });
+  getClient(id) {
+    return this.database.executeSql('SELECT ClientName FROM MAIN_FAB4 WHERE ClientId = ?', [id]).then(data => {});
+  }
+
+  getAddress(id) {
+    return this.database.executeSql('SELECT Address FROM MAIN_FAB4 WHERE ClientId = ?', [id]).then(data => {});
+  }
+
+  getPhoneNumber(id) {
+    return this.database.executeSql('SELECT PhoneNumber FROM MAIN_FAB4 WHERE ClientId = ?', [id]).then(data => {});
+  }
+
+  getTotalDebt(id) {
+    return this.database.executeSql('SELECT TotalDebt FROM MAIN_FAB4 WHERE ClientId = ?', [id]).then(data => {});
+  }
+
+  getMonthlyPayment(id) {
+    return this.database.executeSql('SELECT MonthlyPayment FROM MAIN_FAB4 WHERE ClientId = ?', [id]).then(data => {});
   }
  
-  updateDeveloper(dev: Dev) {
-    let data = [dev.name, JSON.stringify(dev.skills), dev.img];
-    return this.database.executeSql(`UPDATE developer SET name = ?, skills = ?, img = ? WHERE id = ${dev.id}`, data).then(data => {
-      this.loadDevelopers();
-    })
-  }
- 
-  loadProducts() {
-    let query = 'SELECT product.name, product.id, developer.name AS creator FROM product JOIN developer ON developer.id = product.creatorId';
-    return this.database.executeSql(query, []).then(data => {
-      let products = [];
-      if (data.rows.length > 0) {
-        for (var i = 0; i < data.rows.length; i++) {
-          products.push({ 
-            name: data.rows.item(i).name,
-            id: data.rows.item(i).id,
-            creator: data.rows.item(i).creator,
-           });
-        }
-      }
-      this.products.next(products);
-    });
-  }
-  
   getDatabaseState() {
     return this.dbReady.asObservable();
   }
