@@ -19,29 +19,36 @@ export class Tab1Page {
     this.doughnutChart = new Chart(this.doughnutCanvas.nativeElement, {
       type: "doughnut",
       data: {
+        labels: ["Income", "Debt"],
         datasets: [
           {
-            label: "# of Votes",
-            data: [12, 19, 3, 5, 2, 3],
+            data: [8, 2],
             backgroundColor: [
-              "rgba(255, 99, 132, 0.2)",
-              "rgba(54, 162, 235, 0.2)",
-              "rgba(255, 206, 86, 0.2)",
-              "rgba(75, 192, 192, 0.2)",
-              "rgba(153, 102, 255, 0.2)",
-              "rgba(255, 159, 64, 0.2)"
-            ],
-            hoverBackgroundColor: ["#FF6384", "#36A2EB", "#FFCE56", "#FF6384", "#36A2EB", "#FFCE56"]
+              "rgba(35, 117, 35, 1.0)",
+              "rgba(188, 31, 38, 1.0)"
+            ]
           }
         ]
       },
       options: {
+        title: {
+          display: true,
+          text: "Expenses",
+          position: 'top'
+        },
         layout: {
           padding: {
             left: 0,
             right: 0,
             top: 0,
             bottom: 0
+          }
+        },
+        tooltips: {
+          callbacks: {
+            label: function(tooltipItem, data) {
+              return "$" + data['datasets'][tooltipItem.datasetIndex]['data'][tooltipItem.index];
+            }
           }
         }
       }
@@ -49,29 +56,36 @@ export class Tab1Page {
     this.doughnutChart2 = new Chart(this.doughnutCanvas2.nativeElement, {
       type: "doughnut",
       data: {
+        labels: ["Debt", "Payments"],
         datasets: [
           {
-            label: "# of Votes",
-            data: [12, 19, 3, 5, 2, 3],
+            data: [8, 2],
             backgroundColor: [
-              "rgba(255, 99, 132, 0.2)",
-              "rgba(54, 162, 235, 0.2)",
-              "rgba(255, 206, 86, 0.2)",
-              "rgba(75, 192, 192, 0.2)",
-              "rgba(153, 102, 255, 0.2)",
-              "rgba(255, 159, 64, 0.2)"
-            ],
-            hoverBackgroundColor: ["#FF6384", "#36A2EB", "#FFCE56", "#FF6384", "#36A2EB", "#FFCE56"]
+              "rgba(188, 31, 38, 1.0)",
+              "rgba(35, 117, 35, 1.0)"
+            ]
           }
         ]
       },
       options: {
+        title: {
+          display: true,
+          text: "Credit Debt",
+          position: 'top'
+        },
         layout: {
           padding: {
             left: 0,
             right: 0,
             top: 0,
             bottom: 0
+          }
+        },
+        tooltips: {
+          callbacks: {
+            label: function (tooltipItem, data) {
+              return "$" + data['datasets'][tooltipItem.datasetIndex]['data'][tooltipItem.index];
+            }
           }
         }
       }
