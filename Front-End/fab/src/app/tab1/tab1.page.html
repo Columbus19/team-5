@@ -21,8 +21,19 @@
           <canvas #doughnutCanvas></canvas>
         </ion-card-content>
       <ion-card-content>
-        <canvas #doughnutCanvas2></canvas>
+        <canvas #doughnutCanvas></canvas>
       </ion-card-content>
+    <ion-card-content>
+      <canvas #doughnutCanvas2></canvas>
+    </ion-card-content>
     </ion-card>
 
+    <ion-list lines="none">
+      <ion-list-header>
+        <ion-label>Resources</ion-label>
+      </ion-list-header>
+      <ion-button (click)="single_notification()">
+        Single notification
+      </ion-button>
+    </ion-list>
 </ion-content>

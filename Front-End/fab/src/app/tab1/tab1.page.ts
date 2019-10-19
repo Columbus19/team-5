@@ -1,3 +1,6 @@
+import { Events } from '@ionic/angular';
+
+import { LocalNotifications } from '@ionic-native/local-notifications/ngx';
 import { IncomePage } from './../income/income.page';
 import { Component, ViewChild, ElementRef } from '@angular/core';
 import { Chart } from 'chart.js';
@@ -14,7 +17,13 @@ export class Tab1Page {
   private doughnutChart: Chart;
   private doughnutChart2: Chart;
 
-  constructor() {}
+  constructor(
+    public event: Events
+  ) { }
+
+  single_notification() {
+    this.event.publish('notification', 'This is a test notification', '/tabs/tab2');
+  }
 
   ngOnInit() {
     this.doughnutChart = new Chart(this.doughnutCanvas.nativeElement, {
