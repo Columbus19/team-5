@@ -9,6 +9,7 @@ import { StatusBar } from '@ionic-native/status-bar/ngx';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
+import { LocalNotifications } from '@ionic-native/local-notifications/ngx';
 import { SQLitePorter } from '@ionic-native/sqlite-porter/ngx';
 import { SQLite } from '@ionic-native/sqlite/ngx';
  
@@ -22,9 +23,10 @@ import { HttpClientModule } from '@angular/common/http';
   providers: [
     StatusBar,
     SplashScreen,
-    { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
+    LocalNotifications,
     SQLite,
-    SQLitePorter
+    SQLitePorter,
+    { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }
   ],
   bootstrap: [AppComponent]
 })
