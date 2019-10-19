@@ -23,7 +23,7 @@ export class AppComponent {
   ) {
     this.initializeApp();
     this.subscribeToNavigation();
-    this.subscribeToNotifications();
+    this.platform.ready().then(() => this.subscribeToNotifications());
   }
 
   initializeApp() {
@@ -42,13 +42,16 @@ export class AppComponent {
 
   subscribeToNotifications()
   {
+    this.localNotifications.getAll().then(x => console.log(x));
+    this.localNotifications.on('click').subscribe(data => console.log('YA YEEEEEEEEET'));
+
     this.event.subscribe('notification', text => {
       // Schedule a single notification
       this.localNotifications.schedule({
         id: 1,
         text: text,
         sound: '',
-        trigger: { at: new Date(new Date().getTime() + 3600) },
+        // trigger: { at: new Date(new Date().getTime() + 3600) },
         data: { path: '/tabs/tab2' }
       });
     });
