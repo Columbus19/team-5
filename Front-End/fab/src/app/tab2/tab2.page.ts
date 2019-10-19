@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-
+import { Router } from '@angular/router'; 
 
 @Component({
   selector: 'app-tab2',
@@ -23,8 +23,12 @@ export class Tab2Page {
     console.log(e);
   }
 
-  constructor() {
+  constructor(public router: Router) {
 
+  }
+
+  resources_page(){
+    this.router.navigateByUrl("/resources");
   }
 
 }
