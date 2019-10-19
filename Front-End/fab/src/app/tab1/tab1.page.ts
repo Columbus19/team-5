@@ -1,5 +1,4 @@
 import { Events } from '@ionic/angular';
-
 import { LocalNotifications } from '@ionic-native/local-notifications/ngx';
 import { IncomePage } from './../income/income.page';
 import { Component, ViewChild, ElementRef } from '@angular/core';
@@ -22,7 +21,7 @@ export class Tab1Page {
   ) { }
 
   single_notification() {
-    this.event.publish('notification', 'This is a test notification', '/tabs/tab2');
+    this.event.publish('notification', 'We noticed you have missed 2 payments. Contact us for help.', '/tabs/tab2');
   }
 
   ngOnInit() {
