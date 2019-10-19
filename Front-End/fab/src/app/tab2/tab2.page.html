@@ -1,19 +1,35 @@
 <ion-header>
   <ion-toolbar>
     <ion-title>
-      Tab Two
+      Contact US
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-  <div style="display: block">
-    <canvas baseChart>
-      [data]="doughnutChartData"
-      [labels]="doughnutChartLabels"
-      [chartType]="doughnutChartType"
-      (chartHover)="chartHovered($event)"
-      (chartClick)="chartClicked($event)">
-    </canvas>
+
+    <h2 style="color:screen"> Fill out </h2>
+
+    <div class="info">
+
+      <form action="/action_page.php"> First name: <input type="text" name="fname">
+     Last name: <input type="text" name="fname"><br>
+
+
+
+        <hr style="color: green">
+
+      <p class = "title">City</p>
+      <hr >
+
+        <p class = "title">State</p>
+          <hr >
+          <input type="submit" value="Submit">
+          </form>
+
+    <p class = "title">Home Phone</p> <hr> <p class = "title">Mobile Phone</p>
+    <hr style="color: green">
+
+
   </div>
 </ion-content>
