@@ -1,0 +1,7 @@
+{
+  "name": "fab4",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "angular"
+}
