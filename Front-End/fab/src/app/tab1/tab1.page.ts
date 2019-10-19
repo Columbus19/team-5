@@ -1,6 +1,5 @@
-import { Events, ToastController } from '@ionic/angular';]
-import { Router } from '@angular/router';
-
+import { Events, ToastController } from '@ionic/angular';
+import { Router } from '@angular/router'; 
 import { LocalNotifications } from '@ionic-native/local-notifications/ngx';
 import { IncomePage } from './../income/income.page';
 import { Component, ViewChild, ElementRef } from '@angular/core';
@@ -29,6 +28,9 @@ export class Tab1Page {
   }
   income_page(){
     this.router.navigateByUrl('/income');
+  }
+  credit_debt_page(){
+    this.router.navigateByUrl('/credit-debt');
   }
 
   ngOnInit() {
