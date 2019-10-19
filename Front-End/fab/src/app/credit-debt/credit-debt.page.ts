@@ -43,7 +43,7 @@ export class CreditDebtPage implements OnInit {
       options: {
         title: {
           display: true,
-          text: "Credit Debt",
+          text: "Chase Freedom Unlimited",
           position: 'top'
         },
         layout: {
@@ -80,7 +80,7 @@ export class CreditDebtPage implements OnInit {
       options: {
         title: {
           display: true,
-          text: "Credit Debt",
+          text: "Chase Sapphire",
           position: 'top'
         },
         layout: {
@@ -117,7 +117,7 @@ export class CreditDebtPage implements OnInit {
       options: {
         title: {
           display: true,
-          text: "Credit Debt",
+          text: "Chase Saphire Preferred",
           position: 'top'
         },
         layout: {
@@ -154,7 +154,7 @@ export class CreditDebtPage implements OnInit {
       options: {
         title: {
           display: true,
-          text: "Credit Debt",
+          text: "Chase Slate",
           position: 'top'
         },
         layout: {
