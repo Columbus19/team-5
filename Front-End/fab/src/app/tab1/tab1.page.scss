@@ -5,14 +5,15 @@
   text-align: center;
 }
 #bar-top-pad {
-  margin: 30px;
   width: 400px;
   height: 8px;
 }
 
 #bar {
-  margin-left: 40%;
-  margin-right: 40%;
+    margin-left: 40%;
+    margin-right: 40%;
+    margin-top: 50px;
+    margin-bottom: 50px;
 }
 
 canvas{
