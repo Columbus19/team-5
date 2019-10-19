@@ -1,6 +1,9 @@
 CREATE TABLE [MAIN_FAB4] ( 
 	[ClientID] INTEGER  NOT NULL PRIMARY KEY, 
-	[ClientName] NVARCHAR(50)  NOT NULL,  
+	[ClientName] NVARCHAR(50)  NOT NULL, 
+	[Address] NVARCHAR(50)  NOT NULL,
+	[PhoneNumber] INTEGER NOT NULL,
+	[ClientName] NVARCHAR(50)  NOT NULL, 
 	[TotalDebt] INTEGER NOT NULL,
 	[MonthlyPayment] INTEGER NOT NULL,
 	[StartDate] TEXT NOT NULL,

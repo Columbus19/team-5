@@ -1,4 +1,5 @@
-import { Events, ToastController } from '@ionic/angular';
+import { Events, ToastController } from '@ionic/angular';]
+import { Router } from '@angular/router';
 
 import { LocalNotifications } from '@ionic-native/local-notifications/ngx';
 import { IncomePage } from './../income/income.page';
@@ -19,11 +20,15 @@ export class Tab1Page {
 
   constructor(
     public event: Events,
-    public toastController: ToastController
+    public toastController: ToastController,
+    public router: Router
   ) { }
 
   single_notification() {
-    this.event.publish('notification', 'This is a test notification', '/tabs/tab2');
+    this.event.publish('notification', 'We noticed you have missed 2 payments. Contact us for help.', '/tabs/tab2');
+  }
+  income_page(){
+    this.router.navigateByUrl('/income');
   }
 
   ngOnInit() {
