@@ -20,24 +20,30 @@ export class Tab1Page {
   constructor(
     public event: Events,
     public toastController: ToastController,
-    public router: Router
+    public router: Router //Router to link to the other pages using the app-routing.module.ts file
   ) { }
 
+  //Notification trigger
   single_notification() {
     this.event.publish('notification', 'We noticed you have missed 2 payments. Contact us for help.', '/tabs/tab2');
   }
+
+  //Loads the income page
   income_page(){
     this.router.navigateByUrl('/income');
   }
+
+  //Loads the credit debt page
   credit_debt_page(){
     this.router.navigateByUrl('/credit-debt');
   }
 
   ngOnInit() {
+    //Declaring a doughnut chart and applying the settings and data
     this.doughnutChart = new Chart(this.doughnutCanvas.nativeElement, {
       type: "doughnut",
       data: {
-        labels: ["Income", "Debt"],
+        labels: ["Income", "Debt"], //Labels for the legend
         datasets: [
           {
             data: [8, 2],
@@ -51,7 +57,7 @@ export class Tab1Page {
       options: {
         title: {
           display: true,
-          text: "Expenses",
+          text: "Expenses", //Graph title
           position: 'top'
         },
         layout: {
@@ -64,6 +70,7 @@ export class Tab1Page {
         },
         tooltips: {
           callbacks: {
+            //Function to have the data on hove add '$' to the string
             label: function(tooltipItem, data) {
               return "$" + data['datasets'][tooltipItem.datasetIndex]['data'][tooltipItem.index];
             }
