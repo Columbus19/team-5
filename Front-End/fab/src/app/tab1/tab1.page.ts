@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Events } from '@ionic/angular';
 
 import { LocalNotifications } from '@ionic-native/local-notifications/ngx';
 
@@ -10,16 +11,14 @@ import { LocalNotifications } from '@ionic-native/local-notifications/ngx';
 export class Tab1Page
 {
 
-  constructor(private localNotifications: LocalNotifications) { }
+  constructor(
+    public event: Events
+  ) { }
 
   single_notification() {
-    // Schedule a single notification
-    this.localNotifications.schedule({
-      id: 1,
-      text: 'Single ILocalNotification',
-      sound: '',
-      data: { secret: 'key_data' }
-    });
+    this.event.publish('navigate', '/tabs/tab2');
+
+    this.event.publish('notification', 'This is a test notification');
   }
 
 }
