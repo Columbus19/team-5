@@ -6,7 +6,7 @@ const routes: Routes = [
   { path: 'developers', loadChildren: './pages/developers/developers.module#DevelopersPageModule' },
   { path: 'developer', loadChildren: './pages/developer/developer.module#DeveloperPageModule' },
   { path: 'income', loadChildren: './income/income.module#IncomePageModule' },
-  { path: 'income', loadChildren: './income/income.module#IncomePageModule' }
+  { path: 'credit-debt', loadChildren: './credit-debt/credit-debt.module#CreditDebtPageModule' }
 ];
 @NgModule({
   imports: [

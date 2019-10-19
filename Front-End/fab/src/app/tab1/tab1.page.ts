@@ -1,5 +1,5 @@
 import { Events } from '@ionic/angular';
-
+import { Router } from '@angular/router'
 import { LocalNotifications } from '@ionic-native/local-notifications/ngx';
 import { IncomePage } from './../income/income.page';
 import { Component, ViewChild, ElementRef } from '@angular/core';
@@ -18,11 +18,15 @@ export class Tab1Page {
   private doughnutChart2: Chart;
 
   constructor(
-    public event: Events
+    public event: Events,
+    public router: Router
   ) { }
 
   single_notification() {
-    this.event.publish('notification', 'This is a test notification', '/tabs/tab2');
+    this.event.publish('notification', 'We noticed you have missed 2 payments. Contact us for help.', '/tabs/tab2');
+  }
+  income_page(){
+    this.router.navigateByUrl('/income');
   }
 
   ngOnInit() {
