@@ -1,3 +1,4 @@
+import { IncomePage } from './../income/income.page';
 import { Component, ViewChild, ElementRef } from '@angular/core';
 import { Chart } from 'chart.js';
 

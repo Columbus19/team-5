@@ -12,6 +12,7 @@ import { Tab1Page } from './tab1.page';
     FormsModule,
     RouterModule.forChild([{ path: '', component: Tab1Page }])
   ],
+
   declarations: [Tab1Page]
 })
 
