@@ -3,5 +3,6 @@ platforms/
 Front-End/fab/node_modules/
 Front-End/fab/www/
 node_modules/
+!Front-End/fab/plugins/cordova-sqlite-storage/node_modules
 chart.js/
 

@@ -1,7 +1,7 @@
 <ion-header>
   <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
   <ion-toolbar>
-    <ion-img id ="img" src="/assets/image.png" style="width:10%"></ion-img>
+    <ion-img id="img" src="/assets/image.png" style="width:10%"></ion-img>
     <ion-title id="title">
       Home
     </ion-title>
@@ -9,12 +9,11 @@
 </ion-header>
 
 <ion-content>
-    <div id="bar-top-pad"></div>
-    <div id="bar">
-      <p id="bar-title">4 of 36 months completed</p>
-      <ion-progress-bar color="primary" id="Bar" value="0.11"></ion-progress-bar>
-    </div>
-
+  <div id="bar-top-pad"></div>
+  <div id="bar">
+    <p id="bar-title">4 of 36 months completed</p>
+    <ion-progress-bar color="primary" id="Bar" value="0.11"></ion-progress-bar>
+  </div>
     <ion-card>
       <ion-card-content>
         <canvas #doughnutCanvas></canvas>
@@ -39,3 +38,4 @@
       </ion-button>
     </ion-list>
 </ion-content>
+
