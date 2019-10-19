@@ -51,7 +51,7 @@ export class DatabaseService {
     return this.database.executeSql('SELECT * FROM MAIN_FAB4 WHERE ClientID = 1')
   }
 
-  getClient(id): Promise<Dev> {
+ /* getClient(id): Promise<Dev> {
     return this.database.executeSql('SELECT ClientName FROM MAIN_FAB4 WHERE ClientId = ?', [id]).then(data => {
       let skills = [];
       if (data.rows.item(0).skills != '') {
@@ -64,7 +64,7 @@ export class DatabaseService {
         skills: skills
       }
     });
-  }
+  }*/
  
   updateDeveloper(dev: Dev) {
     let data = [dev.name, JSON.stringify(dev.skills), dev.img];

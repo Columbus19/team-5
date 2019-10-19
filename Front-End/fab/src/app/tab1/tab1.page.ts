@@ -1,5 +1,5 @@
 import { Events } from '@ionic/angular';
-import { Router } from '@angular/router'
+import { Router } from '@angular/router';
 import { LocalNotifications } from '@ionic-native/local-notifications/ngx';
 import { IncomePage } from './../income/income.page';
 import { Component, ViewChild, ElementRef } from '@angular/core';
