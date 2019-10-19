@@ -42,17 +42,18 @@ export class AppComponent {
 
   subscribeToNotifications()
   {
-    this.localNotifications.getAll().then(x => console.log(x));
-    this.localNotifications.on('click').subscribe(data => console.log('YA YEEEEEEEEET'));
+    this.localNotifications.on('click').subscribe(data => {
+      this.router.navigateByUrl(data.data.path);
+    });
 
-    this.event.subscribe('notification', text => {
+    this.event.subscribe('notification', (text, path) => {
       // Schedule a single notification
       this.localNotifications.schedule({
         id: 1,
         text: text,
         sound: '',
         // trigger: { at: new Date(new Date().getTime() + 3600) },
-        data: { path: '/tabs/tab2' }
+        data: { path: path }
       });
     });
   }
