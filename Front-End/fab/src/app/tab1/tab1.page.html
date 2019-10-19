@@ -18,22 +18,24 @@
     <ion-card>
       <ion-card-content>
         <canvas #doughnutCanvas></canvas>
-        <ion-button (click)="income_page()"></ion-button>
       </ion-card-content>
       <ion-card-content>
         <canvas #doughnutCanvas2></canvas>
       </ion-card-content>
     </ion-card>
 
-    <ion-list lines="none">
+    <ion-list lines="none" text-center>
       <ion-list-header>
-        <ion-label>Resources</ion-label>
+        <ion-label width-50>Resources</ion-label>
       </ion-list-header>
       <ion-button (click)="single_notification()">
         Single notification
       </ion-button>
       <ion-button (click)="toastBackgroundInformation()">
         Toast
+      </ion-button>
+      <ion-button (click)="income_page()">
+        Income Info
       </ion-button>
     </ion-list>
 </ion-content>
