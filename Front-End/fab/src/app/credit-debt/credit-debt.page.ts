@@ -22,20 +22,20 @@ export class CreditDebtPage implements OnInit {
   constructor(public router: Router) { }
 
   home_page() {
-    this.router.navigateByUrl('/income');
+    this.router.navigateByUrl('/tabs');
   }
 
   ngOnInit() {
     this.doughnutChart = new Chart(this.doughnutCanvas.nativeElement, {
       type: "doughnut",
       data: {
-        labels: ["Income", "Debt"],
+        labels: ["Debt", "Payments"],
         datasets: [
           {
-            data: [8, 2],
+            data: [657, 156],
             backgroundColor: [
-              "rgba(35, 117, 35, 1.0)",
-              "rgba(188, 31, 38, 1.0)"
+              "rgba(188, 31, 38, 1.0)",
+              "rgba(35, 117, 35, 1.0)"
             ]
           }
         ]
@@ -43,7 +43,7 @@ export class CreditDebtPage implements OnInit {
       options: {
         title: {
           display: true,
-          text: "Expenses",
+          text: "Credit Debt",
           position: 'top'
         },
         layout: {
@@ -69,7 +69,7 @@ export class CreditDebtPage implements OnInit {
         labels: ["Debt", "Payments"],
         datasets: [
           {
-            data: [8, 2],
+            data: [1645, 156],
             backgroundColor: [
               "rgba(188, 31, 38, 1.0)",
               "rgba(35, 117, 35, 1.0)"
@@ -103,13 +103,13 @@ export class CreditDebtPage implements OnInit {
     this.doughnutChart3 = new Chart(this.doughnutCanvas3.nativeElement, {
       type: "doughnut",
       data: {
-        labels: ["Income", "Debt"],
+        labels: ["Debt", "Payments"],
         datasets: [
           {
-            data: [8, 2],
+            data: [3497, 156],
             backgroundColor: [
-              "rgba(35, 117, 35, 1.0)",
-              "rgba(188, 31, 38, 1.0)"
+              "rgba(188, 31, 38, 1.0)",
+              "rgba(35, 117, 35, 1.0)"
             ]
           }
         ]
@@ -117,7 +117,7 @@ export class CreditDebtPage implements OnInit {
       options: {
         title: {
           display: true,
-          text: "Expenses",
+          text: "Credit Debt",
           position: 'top'
         },
         layout: {
@@ -143,7 +143,7 @@ export class CreditDebtPage implements OnInit {
         labels: ["Debt", "Payments"],
         datasets: [
           {
-            data: [8, 2],
+            data: [745, 156],
             backgroundColor: [
               "rgba(188, 31, 38, 1.0)",
               "rgba(35, 117, 35, 1.0)"
