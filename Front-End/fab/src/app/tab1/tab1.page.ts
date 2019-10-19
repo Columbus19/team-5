@@ -1,4 +1,4 @@
-import { Events } from '@ionic/angular';
+import { Events, ToastController } from '@ionic/angular';
 
 import { LocalNotifications } from '@ionic-native/local-notifications/ngx';
 import { IncomePage } from './../income/income.page';
@@ -18,7 +18,8 @@ export class Tab1Page {
   private doughnutChart2: Chart;
 
   constructor(
-    public event: Events
+    public event: Events,
+    public toastController: ToastController
   ) { }
 
   single_notification() {
@@ -100,5 +101,15 @@ export class Tab1Page {
         }
       }
     });
+  }
+
+  async toastBackgroundInformation() {
+    const toast = await this.toastController.create({
+      header: 'How did we calculate this value?',
+      message: 'Here goes a description on how we calculated a value. This message will enable clients to learn (or be reminded of) the factors that go into their payments.',
+      position: 'top',
+      showCloseButton: true
+    });
+    toast.present();
   }
 }
